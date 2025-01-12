@@ -19,11 +19,15 @@ const backgrounds = [
 
 let clickCount = 0;
 
-
-
-// Evento de clicar no botão
+// Inicia a música quando o botão é clicado
 document.getElementById("heartButton").addEventListener("click", function () {
   const heartContainer = document.getElementById("heartContainer");
+  const musicPlayer = document.getElementById("musicPlayer");
+
+  // Inicia a música
+  if (clickCount === 0) {
+    musicPlayer.play();
+  }
 
   // Alterar a imagem de fundo
   document.body.style.backgroundImage = backgrounds[clickCount % backgrounds.length];
@@ -34,8 +38,8 @@ document.getElementById("heartButton").addEventListener("click", function () {
   heart.textContent = `❤️ ${messages[clickCount % messages.length]}`;
 
   // Posicionar o coração de forma aleatória
-  const x = Math.random() * (window.innerWidth - 100); // Garantir que o coração não saia da tela horizontal
-  const y = Math.random() * (window.innerHeight - 100); // Garantir que o coração não saia da tela vertical
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 100);
   heart.style.left = `${x}px`;
   heart.style.top = `${y}px`;
 
@@ -50,16 +54,13 @@ document.getElementById("heartButton").addEventListener("click", function () {
   // Incrementar contador de cliques
   clickCount++;
 
-  // Quando o número de cliques atingir 10, exibe a letra da música
+  // Quando o número de cliques atingir 8, exibe a letra da música
   if (clickCount == 8) {
     // Esconde a tela inicial
     document.getElementById("initialScreen").style.display = "none";
 
     // Exibe a tela da música
     document.getElementById("musicScreen").style.display = "flex";
-
-    // Iniciar a música
-    document.getElementById("musicPlayer").play();
   }
 });
 
@@ -71,11 +72,4 @@ document.getElementById("backButton").addEventListener("click", function () {
 
   // Resetar o contador de cliques
   clickCount = 0;
-
-  // Pausar a música ao voltar
-  document.getElementById("musicPlayer").pause();
-  document.getElementById("musicPlayer").currentTime = 0; // Reseta o áudio para o início
 });
-
-// Atualizar a letra da música conforme o áudio
-document.getElementById("musicPlayer").addEventListener("timeupdate", updateSongLyrics);

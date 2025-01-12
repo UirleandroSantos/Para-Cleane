@@ -10,7 +10,7 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Mudança para alinhamento do conteúdo no topo */
+  justify-content: flex-end;
   align-items: center;
   height: 100vh;
   background-color: var(--background-color);
@@ -29,7 +29,7 @@ button {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 1s ease;
-  margin-bottom: 100px; /* Ajuste a posição do botão para mais abaixo */
+  margin-bottom: 100px;
 }
 
 button:hover {
@@ -59,7 +59,11 @@ button:hover {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
-  color: #142026; /* Cor da letra da música (pode ser outra cor de sua escolha) */
+  color: #142026;
+}
+
+#musicPlayer{
+  display: none;
 }
 
 @keyframes float {
@@ -79,20 +83,4 @@ button:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-#musicPlayer{
-  display: none;
-}
-
-#songLyrics {
-  font-size: 1.5rem;
-  padding: 20px;
-  width: 90%;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-}
-
-#backButton {
-  margin-top: 20px;
 }
