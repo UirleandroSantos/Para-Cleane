@@ -2,7 +2,7 @@
   --background-color: #f0f8ff;
   --button-color: #ff69b4;
   --button-hover-color: #ff1493;
-  --heart-color: red;
+  --heart-color: #f01945;
 }
 
 body {
@@ -10,14 +10,13 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end; /* Mudança para alinhamento do conteúdo no topo */
   align-items: center;
   height: 100vh;
   background-color: var(--background-color);
-  background-size: cover; /* Ajusta a imagem de fundo para cobrir toda a tela */
+  background-size: cover;
   background-position: center;
   overflow: hidden;
-  transition: background-image 1s ease; /* Suaviza a troca de imagens */
 }
 
 button {
@@ -30,6 +29,7 @@ button {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 1s ease;
+  margin-bottom: 100px; /* Ajuste a posição do botão para mais abaixo */
 }
 
 button:hover {
@@ -53,6 +53,15 @@ button:hover {
   animation: float 2s ease-in-out forwards;
 }
 
+#songLyrics {
+  font-size: 1.5rem;
+  padding: 20px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  color: #142026; /* Cor da letra da música (pode ser outra cor de sua escolha) */
+}
+
 @keyframes float {
   0% {
     transform: translateY(0) scale(1);
@@ -64,21 +73,26 @@ button:hover {
   }
 }
 
-/* Ajustes para dispositivos móveis */
-@media (max-width: 768px) {
-  button {
-    padding: 12px 16px;
-    font-size: 16px;
-  }
-
-  .heart {
-    font-size: 2rem; /* Menor tamanho de fonte para dispositivos móveis */
-  }
+#musicScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-/* Ajuste de imagem de fundo responsiva */
-@media (max-width: 600px) {
-  body {
-    background-size: cover; /* Garante que a imagem de fundo cubra toda a tela em dispositivos móveis */
-  }
+#musicPlayer{
+  display: none;
+}
+
+#songLyrics {
+  font-size: 1.5rem;
+  padding: 20px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+}
+
+#backButton {
+  margin-top: 20px;
 }

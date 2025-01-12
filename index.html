@@ -10,9 +10,24 @@
 </head>
 
 <body>
-  <button id="heartButton">Vá clicando</button>
-  <div id="heartContainer"></div>
-  <script src="script.js"></script>
+  <!-- Tela inicial -->
+  <div id="initialScreen" style="display: flex; flex-direction: column; align-items: center;">
+    <button id="heartButton">Vá clicando</button>
+    <div id="heartContainer"></div>
+  </div>
+
+  <!-- Tela da letra da música (oculta inicialmente) -->
+  <div id="musicScreen" style="display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <h1 id="songLyrics">Sei que você gosta dessa música, então vou deixar ela aqui!</h1>
+    
+    <!-- Adicionar música -->
+    <audio id="musicPlayer" controls autoplay>
+      <source src="./audios/Lulu Santos - Sereia - Márcio da Silva Souza.mp3" type="audio/mp3">
+      Seu navegador não suporta a tag de áudio.
+    </audio>
+
+    <button id="backButton">Voltar ao início</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
